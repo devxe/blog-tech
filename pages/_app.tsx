@@ -1,19 +1,23 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Navigation from "../components/Navgation";
-import { useState } from "react";
+import { Provider } from "react-redux";
+import { applyMiddleware, createStore } from "redux";
+import rootReducer from "../modules";
+import logger from "redux-logger";
+import Container from "../components/Container";
 
+const store = createStore(rootReducer, applyMiddleware(logger));
 function MyApp({ Component, pageProps }: AppProps) {
-  const [isDark, setDark] = useState(false);
-
-  const onDarkMode = () => {
-    setDark((prev) => !prev);
-  };
+  const darkMode = store.getState().app.darkMode;
+  console.log(darkMode);
   return (
-    <div className={"font-sans" && isDark ? "dark" : ""}>
-      <Navigation onDarkMode={onDarkMode} />
-      <Component {...pageProps} />
-    </div>
+    <Provider store={store}>
+      <Container>
+        <Navigation />
+        <Component {...pageProps} />
+      </Container>
+    </Provider>
   );
 }
 

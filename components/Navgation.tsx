@@ -1,10 +1,13 @@
 import { NextPage } from "next";
+import { useDispatch } from "react-redux";
+import { setDarkMode } from "../modules/app";
 
-type NavigationProps = {
-  onDarkMode: () => void;
-};
+const Navigation: NextPage = () => {
+  const dispatch = useDispatch();
+  const handleDarkMode = () => {
+    dispatch(setDarkMode());
+  };
 
-const Navigation: NextPage<NavigationProps> = ({ onDarkMode }) => {
   return (
     <>
       <nav className="flex flex-row h-20 items-center p-8 justify-between font-bold text-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-300">
@@ -13,7 +16,7 @@ const Navigation: NextPage<NavigationProps> = ({ onDarkMode }) => {
           <div className="text-sm text-gray-400">Devlog</div>
         </div>
         <div className="flex flex-row space-x-4">
-          <button onClick={onDarkMode}>
+          <button onClick={handleDarkMode}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
