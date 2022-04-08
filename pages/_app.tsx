@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     setDark((prev) => !prev);
   };
   return (
-    <div className={isDark ? "dark" : ""}>
+    <div className={"font-sans" && isDark ? "dark" : ""}>
       <Navigation onDarkMode={onDarkMode} />
       <Component {...pageProps} />
     </div>

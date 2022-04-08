@@ -7,7 +7,7 @@ type NavigationProps = {
 const Navigation: NextPage<NavigationProps> = ({ onDarkMode }) => {
   return (
     <>
-      <nav className="flex flex-row h-20 items-center p-8 justify-between font-bold text-lg font-sans bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-300">
+      <nav className="flex flex-row h-20 items-center p-8 justify-between font-bold text-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-300">
         <div className="flex flex-row items-baseline space-x-2">
           <div>로이</div>
           <div className="text-sm text-gray-400">Devlog</div>
