@@ -1,8 +1,20 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import Navigation from "../components/Navgation";
+import { useState } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const [isDark, setDark] = useState(false);
+
+  const onDarkMode = () => {
+    setDark((prev) => !prev);
+  };
+  return (
+    <div className={isDark ? "dark" : ""}>
+      <Navigation onDarkMode={onDarkMode} />
+      <Component {...pageProps} />
+    </div>
+  );
 }
 
-export default MyApp
+export default MyApp;
