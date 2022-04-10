@@ -5,10 +5,12 @@ import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
 import rootReducer from "../modules";
 import logger from "redux-logger";
+import thunk from "redux-thunk";
 import Container from "../components/Container";
 import Footer from "../components/Footer";
 
-const store = createStore(rootReducer, applyMiddleware(logger));
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+
 function MyApp({ Component, pageProps }: AppProps) {
   const darkMode = store.getState().app.darkMode;
   console.log(darkMode);
