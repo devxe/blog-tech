@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <Provider store={store}>
       <Container>
         <Header />
-        <div className="w-full max-w-3xl mx-auto">
+        <div className="w-full max-w-3xl mx-auto p-8">
           <Component {...pageProps} />
         </div>
         <Footer />

@@ -3,7 +3,7 @@ import { NextPage } from "next";
 const Post: NextPage = () => {
   return (
     <>
-      <div className="cursor-pointer text-blue-500 hover:text-blue-400">
+      <div className="cursor-pointer text-blue-500 hover:text-blue-400 active:text-blue-600">
         <span className="text-lg font-semibold">
           마우스를 따라 움직이는 조명 효과 구현하기
         </span>
