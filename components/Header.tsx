@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Link from "next/link";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { setDarkMode } from "../modules/app";
 

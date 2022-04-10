@@ -1,12 +1,15 @@
 import { NextPage } from "next";
 
-const Post: NextPage = () => {
+const Post: NextPage<Post> = ({
+  id, //
+  title,
+  subtitle,
+  date,
+}) => {
   return (
     <>
       <div className="cursor-pointer text-blue-500 hover:text-blue-400 active:text-blue-600">
-        <span className="text-lg font-semibold">
-          마우스를 따라 움직이는 조명 효과 구현하기
-        </span>
+        <span className="text-lg font-semibold">{title}</span>
         <div className="text-xs flex flex-row items-center space-x-1 text-gray-400">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -24,9 +27,7 @@ const Post: NextPage = () => {
           </svg>
           <span>March 27, 2022</span>
         </div>
-        <div className="text-sm text-slate-800">
-          CSS, JS 활용하여 스포트라이트 효과 만들기
-        </div>
+        <div className="text-sm text-slate-800">{subtitle}</div>
       </div>
     </>
   );
