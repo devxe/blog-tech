@@ -1,18 +1,10 @@
+import { Posts } from "./../../api/posts";
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
   name: string;
 };
-
-type Post = {
-  id: number;
-  title: string;
-  subtitle: string;
-  date: Date;
-};
-
-type Posts = Post[];
 
 const posts: Posts = [
   {
