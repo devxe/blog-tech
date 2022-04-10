@@ -1,11 +1,12 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import Navigation from "../components/Navgation";
+import Header from "../components/Header";
 import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
 import rootReducer from "../modules";
 import logger from "redux-logger";
 import Container from "../components/Container";
+import Footer from "../components/Footer";
 
 const store = createStore(rootReducer, applyMiddleware(logger));
 function MyApp({ Component, pageProps }: AppProps) {
@@ -14,10 +15,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <Container>
-        <Navigation />
+        <Header />
         <div className="w-full max-w-3xl mx-auto">
           <Component {...pageProps} />
         </div>
+        <Footer />
       </Container>
     </Provider>
   );

@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Navigation from "../components/Navgation";
 import Post from "../components/Post";
 
 const Home: NextPage = () => {
@@ -10,7 +9,7 @@ const Home: NextPage = () => {
           <span className="text-lg font-semibold">최신 글</span>
         </div>
         <div className="space-y-6">
-          {[...Array(20)].map((_, i) => (
+          {[...Array(5)].map((_, i) => (
             <Post key={i} />
           ))}
         </div>
