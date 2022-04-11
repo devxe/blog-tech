@@ -9,6 +9,7 @@ import Container from "../components/Container";
 import Footer from "../components/Footer";
 import createSagaMiddleware from "redux-saga";
 import { composeWithDevTools } from "redux-devtools-extension";
+import rootSaga from "../store/user/sagas";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -19,7 +20,7 @@ const enhancer =
 
 const store = createStore(rootReducer, enhancer);
 
-// sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(rootSaga);
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

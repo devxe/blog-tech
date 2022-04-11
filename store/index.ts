@@ -1,9 +1,10 @@
+import { user } from "./user/reducer/reducer";
 import { app } from "./app/reducer/reducer";
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
   app,
-  // posts,
+  user,
 });
 
 export default rootReducer;

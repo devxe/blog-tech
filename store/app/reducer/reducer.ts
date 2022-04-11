@@ -1,14 +1,10 @@
-import { appActionRequest } from "./../action/actions";
-import { appProps, DARK_MODE } from "./../types/types";
-
-export const initialState: appProps = {
+import { AppAction } from "./../action/actions";
+import { AppState, DARK_MODE } from "./../constants/types";
+export const initialState: AppState = {
   darkMode: false,
 };
 
-export const app = (
-  state: appProps = initialState,
-  action: appActionRequest
-) => {
+export const app = (state: AppState = initialState, action: AppAction) => {
   switch (action.type) {
     case DARK_MODE:
       return {

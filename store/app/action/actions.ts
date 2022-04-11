@@ -1,7 +1,7 @@
-import { DARK_MODE } from "../types/types";
+import { DARK_MODE } from "../constants/types";
 
 export const toggleDarkMode = () => ({
   type: DARK_MODE,
 });
 
-export type appActionRequest = ReturnType<typeof toggleDarkMode>;
+export type AppAction = ReturnType<typeof toggleDarkMode>;
