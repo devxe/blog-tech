@@ -4,6 +4,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { monthDayYear } from "../lib/utils";
 import { RootState } from "../store";
+import MarkdownRenderer from "./MarkdownRenderer";
 
 const PostDetail: NextPage = () => {
   const router = useRouter();
@@ -40,6 +41,8 @@ const PostDetail: NextPage = () => {
         </svg>
         <span>{monthDayYear(date)}</span>
       </div>
+
+      <MarkdownRenderer />
       {/* <button className="flex felx-row items-center" onClick={handleBack}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
