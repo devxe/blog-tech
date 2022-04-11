@@ -10,6 +10,8 @@ import Footer from "../components/Footer";
 import createSagaMiddleware from "redux-saga";
 import { composeWithDevTools } from "redux-devtools-extension";
 import rootSaga from "../store/user/sagas";
+import { PersistGate } from "redux-persist/integration/react";
+import persistStore from "redux-persist/lib/persistStore";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -19,19 +21,22 @@ const enhancer =
     : composeWithDevTools(applyMiddleware(sagaMiddleware, Logger));
 
 const store = createStore(rootReducer, enhancer);
+const persistor = persistStore(store);
 
 sagaMiddleware.run(rootSaga);
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <Container>
-        <Header />
-        <div className="w-full max-w-3xl mx-auto p-8 pb-36">
-          <Component {...pageProps} />
-        </div>
-        <Footer />
-      </Container>
+      <PersistGate loading={null} persistor={persistor}>
+        <Container>
+          <Header />
+          <div className="w-full max-w-3xl mx-auto p-8 pb-36">
+            <Component {...pageProps} />
+          </div>
+          <Footer />
+        </Container>
+      </PersistGate>
     </Provider>
   );
 }
