@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 
-const About: NextPage = () => {
+const AboutPage: NextPage = () => {
   return (
     <>
       <span className="text-lg font-semibold">소개</span>
@@ -8,4 +8,4 @@ const About: NextPage = () => {
   );
 };
 
-export default About;
+export default AboutPage;

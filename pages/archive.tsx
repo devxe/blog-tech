@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 
-const Archive: NextPage = () => {
+const ArchivePage: NextPage = () => {
   return (
     <>
       <span className="text-lg font-semibold">아카이브</span>
@@ -8,4 +8,4 @@ const Archive: NextPage = () => {
   );
 };
 
-export default Archive;
+export default ArchivePage;

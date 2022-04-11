@@ -5,7 +5,7 @@ import Post from "../components/Post";
 import { RootState } from "../store";
 import userActions from "../store/user/action/actions";
 
-const Home: NextPage = () => {
+const HomePage: NextPage = () => {
   const { data, loading, error } = useSelector(
     (state: RootState) => state.user
   );
@@ -26,6 +26,7 @@ const Home: NextPage = () => {
             {data?.map((post) => (
               <Post
                 key={post.id}
+                id={post.id}
                 title={post.title}
                 subtitle={post.subtitle}
                 date={post.date}
@@ -38,4 +39,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default HomePage;
