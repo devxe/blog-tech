@@ -2,12 +2,12 @@ import { NextPage } from "next";
 import Link from "next/link";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setDarkMode } from "../modules/app";
+import { toggleDarkMode } from "../store/app/action/actions";
 
 const Header: NextPage = () => {
   const dispatch = useDispatch();
   const handleDarkMode = () => {
-    dispatch(setDarkMode());
+    dispatch(toggleDarkMode());
   };
 
   return (
