@@ -21,7 +21,9 @@ const markdown = `
 const MarkdownRenderer = () => {
   return (
     <>
-      <div className="prose">{markdown}</div>
+      <div className="prose">
+        <ReactMarkdown>{markdown}</ReactMarkdown>
+      </div>
     </>
   );
 };
